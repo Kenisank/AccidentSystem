@@ -6,35 +6,17 @@ using System.Threading.Tasks;
 
 namespace AccidentSystem.Domain.Models
 {
-    public class PedestrianEntries
-    {
+    public class PedestrianEntries:AffectedPersons
+    { 
+       
 
-        // Number of dead Pedestrian
-        public int DeadMale { get; set; }
+        public int CategoryId { get; set; }
 
-        public int DeadFemale { get; set; }
+        public Categories Category { get; set; }
 
+       
 
-        // Number of hurt Pedestrian
-        public int HurtMale { get; set; }
-        public int HurtFemale { get; set; }
-
-
-        // Number of survied Pedestrian
-        public int SurviedMale { get; set; }
-        public int SurviedFemale { get; set; }
-
-
-        //Number Of Affected Persons
-        public virtual AffectedPersons AffectedPerson { get; set; }
-
-        public PedestrianEntries()
-        {
-            AffectedPerson = new AffectedPersons();
-        }
-
-
-
+        
 
     }
 }

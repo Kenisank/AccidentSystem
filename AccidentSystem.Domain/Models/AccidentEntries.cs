@@ -13,23 +13,33 @@ namespace AccidentSystem.Domain.Models
 
         public string Address { get; set; }
 
+
+        public int StateId { get; set; }
+
         public States State { get; set; }
 
         public virtual ICollection<Persons> Withnesses { get; set; }
 
-        public virtual ICollection<Causes> Causes { get; set; }
+        public ICollection<Causes> Causes { get; set; }
+
+        public virtual ICollection<VehicleEntries> VehicleEntries { get; set; }
+
+        public virtual PedestrianEntries PedestrianEntry { get; set; }
 
 
         //image evidence
-        public virtual ICollection<Evidences> Evidences { get; set; }
+        public virtual Evidences Evidences { get; set; }
 
         public AccidentEntries()
         {
+
             Withnesses = new Collection<Persons>();
 
             Causes = new Collection<Causes>();
 
-            Evidences = new Collection<Evidences>();
+            Evidences = new Evidences();
+
+            VehicleEntries = new Collection<VehicleEntries>();
 
         }
 

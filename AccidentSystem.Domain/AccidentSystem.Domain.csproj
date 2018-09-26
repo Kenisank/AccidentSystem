@@ -64,18 +64,23 @@
     <Compile Include="Dal\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Models\AccidentEntries.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Causes.cs" />
     <Compile Include="Models\AffectedPersons.cs" />
     <Compile Include="Models\Evidences.cs" />
     <Compile Include="Models\PedestrianEntries.cs" />
     <Compile Include="Models\Persons.cs" />
     <Compile Include="Models\States.cs" />
+    <Compile Include="Models\Types.cs" />
     <Compile Include="Models\VehicleEntries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

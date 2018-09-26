@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace AccidentSystem.Domain.Models
 {
-   public class VehicleEntries
+   public class VehicleEntries:AffectedPersons
     {
+        
+
+        public int TypeId { get; set; }
+
+        //type of vehicle
+        public Types Type { get; set; }
+
         public string PlateNo { get; set; }
 
         public string Model { get; set; }
 
         public string Colour { get; set; }
 
+      
 
-        //Number Of Affected Persons
-        public virtual AffectedPersons AffectedPerson { get; set; }
+        public string NumOfPersons => $"A Driver and {Dead + Hurt + Survied} passagers";
 
-        public string NumOfPersons => $"A Driver and {AffectedPerson.Dead + AffectedPerson.Hurt + AffectedPerson.Survied} passagers";
-
-        public VehicleEntries()
-        {
-            AffectedPerson = new AffectedPersons();
-        }
+      
     }
 }
