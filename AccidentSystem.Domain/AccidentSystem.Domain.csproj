@@ -58,11 +58,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\EfContext.cs" />
+    <Compile Include="Dal\Repositories\AccidentRecordRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\IAccidentRecordRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\IVehicleEntryRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\IPedestrianEntryRepository.cs" />
+    <Compile Include="Dal\Repositories\PedestrianEntryRepository.cs" />
     <Compile Include="Dal\Repositories\Repository.cs" />
-    <Compile Include="Dal\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Dal\Repositories\VehicleEntryRepository.cs" />
+    <Compile Include="Dal\UnitOfWork\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Dal\UnitOfWork\UnitOfWork.cs" />
-    <Compile Include="Models\AccidentEntries.cs" />
+    <Compile Include="Models\AccidentRecords.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Causes.cs" />
@@ -74,13 +80,14 @@
     <Compile Include="Models\Types.cs" />
     <Compile Include="Models\VehicleEntries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccidentRecordServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

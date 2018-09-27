@@ -8,6 +8,13 @@ namespace AccidentSystem.Domain.Models
 {
    public class AffectedPersons
     {
+
+        public int Id { get; set; }
+
+        public int AccidentRecordId { get; set; }
+
+        public virtual AccidentRecords AccidentRecord { get; set; }
+
         // Number of dead persons
         public int DeadMale { get; set; }
 
@@ -35,5 +42,7 @@ namespace AccidentSystem.Domain.Models
         public int Hurt => HurtFemale + HurtMale;
 
         public int Survied => SurviedFemale + SurviedMale;
+
+        public int Total => Dead + Hurt + Survied;
     }
 }

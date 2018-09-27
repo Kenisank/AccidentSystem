@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AccidentSystem.Domain.Models
 {
-   public  class AccidentEntries
+   public  class AccidentRecords
     {
         public int Id { get; set; }
 
@@ -18,7 +18,11 @@ namespace AccidentSystem.Domain.Models
 
         public States State { get; set; }
 
-        public virtual ICollection<Persons> Withnesses { get; set; }
+        public virtual Persons Withnesses { get; set; }
+
+        public virtual Persons OtherWithnesses { get; set; }
+
+
 
         public ICollection<Causes> Causes { get; set; }
 
@@ -30,10 +34,8 @@ namespace AccidentSystem.Domain.Models
         //image evidence
         public virtual Evidences Evidences { get; set; }
 
-        public AccidentEntries()
+        public AccidentRecords()
         {
-
-            Withnesses = new Collection<Persons>();
 
             Causes = new Collection<Causes>();
 

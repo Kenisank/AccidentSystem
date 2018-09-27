@@ -21,9 +21,14 @@ namespace AccidentSystem.Domain.Models
 
         public string Colour { get; set; }
 
+        public int Passagers => Total - 1;
+
+        public int Driver => 1;
+
       
 
         public string NumOfPersons => $"A Driver and {Dead + Hurt + Survied} passagers";
+
 
       
     }

@@ -15,7 +15,7 @@ namespace AccidentSystem.Domain.Dal
 
         public EfContext():base("EfContext") { }
 
-        public DbSet<AccidentEntries> AccidentEntries { get; set; }
+        public DbSet<AccidentRecords> AccidentRecords { get; set; }
 
         public DbSet<AffectedPersons> AffectedPersons { get; set; }
 
@@ -26,8 +26,6 @@ namespace AccidentSystem.Domain.Dal
         public DbSet<Evidences> Evidences { get; set; }
 
         public DbSet<PedestrianEntries> PedestrianEntries { get; set; }       
-
-        public DbSet<Persons> Persons { get; set; }
         
         public DbSet<States> States { get; set; } 
 

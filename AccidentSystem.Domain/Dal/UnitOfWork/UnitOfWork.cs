@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AccidentSystem.Domain.Dal.Repositories;
+using AccidentSystem.Domain.Dal.Repositories.Interfaces;
+using AccidentSystem.Domain.Dal.UnitOfWork.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +16,16 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
         public UnitOfWork(EfContext context)
         {
             _context = context;
+
+            AccidentRecords = new AccidentRecordRepository(context);
+
+            VehicleEntries = new VehicleEntryRepository(context);
         }
 
+
+        public IAccidentRecordRepository AccidentRecords { get; set; }
+
+        public IVehicleEntryRepository VehicleEntries { get; set; }
 
         public void Dispose()
         {
