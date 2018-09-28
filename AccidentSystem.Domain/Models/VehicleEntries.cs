@@ -21,6 +21,11 @@ namespace AccidentSystem.Domain.Models
 
         public string Colour { get; set; }
 
+
+        //State of the vehicle, demaged or not
+
+        public string State { get; set; }
+
         public int Passagers => Total - 1;
 
         public int Driver => 1;

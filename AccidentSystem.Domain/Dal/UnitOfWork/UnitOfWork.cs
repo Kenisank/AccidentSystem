@@ -20,12 +20,16 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
             AccidentRecords = new AccidentRecordRepository(context);
 
             VehicleEntries = new VehicleEntryRepository(context);
+
+            PedestrianEntries = new PedestrianEntryRepository(context);
         }
 
 
         public IAccidentRecordRepository AccidentRecords { get; set; }
 
         public IVehicleEntryRepository VehicleEntries { get; set; }
+
+        public IPedestrianEntryRepository PedestrianEntries { get; set; }
 
         public void Dispose()
         {

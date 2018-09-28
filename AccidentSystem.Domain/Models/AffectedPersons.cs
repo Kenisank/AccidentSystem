@@ -31,9 +31,6 @@ namespace AccidentSystem.Domain.Models
 
 
 
-        //State of the vehicle, demaged or not
-
-        public string State { get; set; }
 
         //total number of persons and driver
 

@@ -20,8 +20,7 @@ namespace AccidentSystem.Domain.Services
 
 
 
-        public bool AddAccidentRecord(AccidentRecords record,
-            IEnumerable<VehicleEntries> vehiclesEntries, PedestrianEntries pedestrianEntries)
+        public bool AddAccidentRecord(AccidentRecords record, IEnumerable<VehicleEntries> vehiclesEntries, PedestrianEntries pedestrianEntries)
         {
 
             if (record == null)
@@ -39,8 +38,14 @@ namespace AccidentSystem.Domain.Services
                 }
             }
 
-            if(pedestrianEntries!=null)
-            record.PedestrianEntry = pedestrianEntries;
+            if (pedestrianEntries != null)
+            {
+                record.PedestrianEntry = pedestrianEntries;
+                _unitofwork.PedestrianEntries.addToCategory(record.PedestrianEntry);
+            }
+            
+
+            _unitofwork.AccidentRecords.Add(record);
 
             if (_unitofwork.Save())
                 return true;
