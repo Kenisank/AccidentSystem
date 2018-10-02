@@ -32,14 +32,14 @@ namespace AccidentSystem.Domain.Models
 
 
         //image evidence
-        public virtual Evidences Evidences { get; set; }
+        public virtual Evidences Evidence { get; set; }
 
         public AccidentRecords()
         {
 
             Causes = new Collection<Causes>();
 
-            Evidences = new Evidences();
+            Evidence = new Evidences();
 
             VehicleEntries = new Collection<VehicleEntries>();
 

@@ -47,7 +47,7 @@ namespace AccidentSystem.Test.Services
                     new Causes {Id=2, Name="Reckless driving" }
                 },
 
-                Evidences = new Evidences { Image = "njhi", Description = "bhjhh" },
+                Evidence = new Evidences { Image = "njhi", Description = "bhjhh" },
                 Withnesses = new Persons { Name = "nkhih", Number = "ugugu" },
                 OtherWithnesses = new Persons { Name = "bjjgjb", Number = "bhhg" },
                 State = new States { Id = 1, Name = "Anambra" },

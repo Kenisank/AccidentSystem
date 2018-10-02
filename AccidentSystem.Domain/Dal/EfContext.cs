@@ -23,8 +23,6 @@ namespace AccidentSystem.Domain.Dal
 
         public DbSet<Causes> Causes { get; set; }
 
-        public DbSet<Evidences> Evidences { get; set; }
-
         public DbSet<PedestrianEntries> PedestrianEntries { get; set; }       
         
         public DbSet<States> States { get; set; } 

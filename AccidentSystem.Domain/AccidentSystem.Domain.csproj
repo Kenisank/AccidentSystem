@@ -68,6 +68,11 @@
     <Compile Include="Dal\Repositories\VehicleEntryRepository.cs" />
     <Compile Include="Dal\UnitOfWork\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Dal\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Migrations\201810021347229_Initial.cs" />
+    <Compile Include="Migrations\201810021347229_Initial.Designer.cs">
+      <DependentUpon>201810021347229_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccidentRecords.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -87,7 +92,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810021347229_Initial.resx">
+      <DependentUpon>201810021347229_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
