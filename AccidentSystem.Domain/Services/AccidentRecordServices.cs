@@ -20,16 +20,16 @@ namespace AccidentSystem.Domain.Services
 
 
 
-        public bool AddAccidentRecord(AccidentRecords record, IEnumerable<VehicleEntries> vehiclesEntries, PedestrianEntries pedestrianEntries)
+        public bool AddAccidentRecord(AccidentRecords record, IEnumerable<int> causesIds,  IEnumerable<VehicleEntries> vehiclesEntries, PedestrianEntries pedestrianEntries)
         {
 
             if (record == null)
                 return false;
 
-            if (vehiclesEntries.Count() <= 0 || pedestrianEntries == null)
+            if ((vehiclesEntries.Count() <= 0 || pedestrianEntries == null) && causesIds.Count()>0)
                 return false;
 
-            if (vehiclesEntries.Count() > 0)
+            if (vehiclesEntries.Count() > 0 || vehiclesEntries!=null)
             {
                 foreach (var vehicleEntry in vehiclesEntries)
                 {
@@ -43,6 +43,23 @@ namespace AccidentSystem.Domain.Services
                 record.PedestrianEntry = pedestrianEntries;
                 _unitofwork.PedestrianEntries.addToCategory(record.PedestrianEntry);
             }
+
+            if (causesIds!=null || causesIds.Count() > 0)
+            {
+                
+
+
+                foreach(var causeId in causesIds)
+                {
+                   var cause = _unitofwork.Causes.Get(causeId);
+
+                    if (cause != null)
+                        record.Causes.Add(cause);
+                }
+
+               
+            }
+
             
 
             _unitofwork.AccidentRecords.Add(record);

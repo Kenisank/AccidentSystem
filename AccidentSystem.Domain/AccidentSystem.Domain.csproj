@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
@@ -59,7 +60,9 @@
   <ItemGroup>
     <Compile Include="Dal\EfContext.cs" />
     <Compile Include="Dal\Repositories\AccidentRecordRepository.cs" />
+    <Compile Include="Dal\Repositories\CauseRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IAccidentRecordRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\ICauseRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IVehicleEntryRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IPedestrianEntryRepository.cs" />
@@ -68,9 +71,21 @@
     <Compile Include="Dal\Repositories\VehicleEntryRepository.cs" />
     <Compile Include="Dal\UnitOfWork\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Dal\UnitOfWork\UnitOfWork.cs" />
-    <Compile Include="Migrations\201810021347229_Initial.cs" />
-    <Compile Include="Migrations\201810021347229_Initial.Designer.cs">
-      <DependentUpon>201810021347229_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201810022002456_Initial.cs" />
+    <Compile Include="Migrations\201810022002456_Initial.Designer.cs">
+      <DependentUpon>201810022002456_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031350208_PopulateState.cs" />
+    <Compile Include="Migrations\201810031350208_PopulateState.Designer.cs">
+      <DependentUpon>201810031350208_PopulateState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810041134105_ChangeWithnessesToWithness.cs" />
+    <Compile Include="Migrations\201810041134105_ChangeWithnessesToWithness.Designer.cs">
+      <DependentUpon>201810041134105_ChangeWithnessesToWithness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810041733273_populateMorestate.cs" />
+    <Compile Include="Migrations\201810041733273_populateMorestate.Designer.cs">
+      <DependentUpon>201810041733273_populateMorestate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccidentRecords.cs" />
@@ -93,8 +108,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810021347229_Initial.resx">
-      <DependentUpon>201810021347229_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810022002456_Initial.resx">
+      <DependentUpon>201810022002456_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031350208_PopulateState.resx">
+      <DependentUpon>201810031350208_PopulateState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810041134105_ChangeWithnessesToWithness.resx">
+      <DependentUpon>201810041134105_ChangeWithnessesToWithness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810041733273_populateMorestate.resx">
+      <DependentUpon>201810041733273_populateMorestate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

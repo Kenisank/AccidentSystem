@@ -1,0 +1,211 @@
+﻿@model AccidentSystem.Core.Dtos.AccidentEntryDto
+
+@{
+    ViewBag.Title = "New Accident Record";
+}
+
+<link href="~/Content/main.css" rel="stylesheet">
+
+<script type="text/javascript">
+       // $(function () {
+            //$('#sstates').multiselect({
+            //    includeSelectAllOption:true
+            //});
+
+            
+       // });
+</script>
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+    {
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="form-horizontal">
+
+        <div class="col-md-6">
+            <h4>Location</h4>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Record.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Record.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Record.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Record.StateId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.DropDownListFor(m=>m.Record.StateId,   new SelectList(Model.States, "Id", "Name"), "Select State", new { @class="form-control"})
+                    @Html.ValidationMessageFor(model => model.Record.StateId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div>
+                <select id="sstates" multiple="multiple" required name="sstaten">
+
+                    @if(Model.States!=null)
+                       {
+
+                       foreach(var item in Model.States)
+                       {
+                       if(item.Name!=null)
+                       {
+                        <option value="@item.Id">@item.Name</option>
+                       }
+                       }
+                       }
+
+                </select>
+            </div>*@
+
+
+
+
+            <div style="display:none" id="divid">
+
+            <h4>Withnesses</h4>
+            <hr />
+
+               
+
+                    <h5>First Withness</h5>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Record.Withness.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Record.Withness.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Record.Withness.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Record.Withness.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Record.Withness.Number, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Record.Withness.Number, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                <div class="form-group  col-md-10" style="display:block; margin-bottom:20px;">
+                    <input type="button" onclick="remwithness1()" value="Remove" style="display:block;" id="rembtn1" class="btn btn-default col-md-4" />
+
+                    <input type="button" onclick="showwithness2()" value="Add" style="display:block;" id="hidebtn2" class="btn btn-success col-md-4" />
+
+
+                </div>
+
+               <br/>
+
+                    <div style="display:none" id="withness2">
+
+                        <h5>Second Withness</h5>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Record.OtherWithness.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Record.OtherWithness.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Record.OtherWithness.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Record.OtherWithness.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Record.OtherWithness.Number, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Record.OtherWithness.Number, "", new { @class = "text-danger", @type="Number" })
+                            </div>
+                        </div>
+
+                        <div class="form-group  col-md-10" style="display:block; margin-bottom:20px;">
+                            <input type="button" onclick="remwithness2()" value="Remove " style="display:block" id="rembtn2" class="btn btn-default" />
+                            </div>
+
+                        </div>
+
+</div>
+            <div class="form-group  col-md-10" style="display:block; margin-bottom:20px;">
+                <input type="button" onclick="showwithness1()" value="Add Withnesses" style="display:block" class="btn btn-success"  id="hidebtn1" />
+                </div>
+
+            </div>
+
+        <div class="form-group">
+            <label>Checkbox &amp; Radio List</label>
+            <div class="input-group">
+                <ul class="icheck-list">
+                    <li>
+                        <input type="checkbox" class="check" id="flat-checkbox-1" data-checkbox="icheckbox_flat-red">
+                        <label for="flat-checkbox-1">Checkbox 1</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="check" id="flat-checkbox-2" checked data-checkbox="icheckbox_flat-red">
+                        <label for="flat-checkbox-2">Checkbox 2</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="check" id="flat-checkbox-disabled" disabled data-checkbox="icheckbox_flat-red">
+                        <label for="flat-checkbox-disabled">Disabled</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="check" id="flat-checkbox-disabled-checked" checked disabled data-checkbox="icheckbox_flat-red">
+                        <label for="flat-checkbox-disabled-checked">Disabled &amp; checked</label>
+                    </li>
+                </ul>
+                <ul class="icheck-list">
+                    <li>
+                        <input type="radio" class="check" id="flat-radio-1" name="flat-radio" data-radio="iradio_flat-red">
+                        <label for="flat-radio-1">Radio button 1</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="check" id="flat-radio-2" name="flat-radio" checked data-radio="iradio_flat-red">
+                        <label for="flat-radio-2">Radio button 2</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="check" id="flat-radio-disabled" disabled data-radio="iradio_flat-red">
+                        <label for="flat-radio-disabled">Disabled</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="check" id="flat-radio-disabled-checked" checked disabled data-radio="iradio_flat-red">
+                        <label for="flat-radio-disabled-checked">Disabled &amp; checked</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section scripts
+    {
+<script src="/Scripts/form_jquery.js"></script>
+<script src="~/Scripts/form_javascript.js"></script>
+
+    }
+
+
+    

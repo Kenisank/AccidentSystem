@@ -7,13 +7,13 @@ namespace AccidentSystem.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class ChangeWithnessesToWithness : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeWithnessesToWithness));
         
         string IMigrationMetadata.Id
         {
-            get { return "201810021347229_Initial"; }
+            get { return "201810041134105_ChangeWithnessesToWithness"; }
         }
         
         string IMigrationMetadata.Source

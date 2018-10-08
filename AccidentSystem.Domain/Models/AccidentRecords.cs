@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,14 @@ namespace AccidentSystem.Domain.Models
 
         public string Address { get; set; }
 
-
+        [Display(Name ="State")]
         public int StateId { get; set; }
 
         public States State { get; set; }
 
-        public virtual Persons Withnesses { get; set; }
+        public virtual Persons Withness { get; set; }
 
-        public virtual Persons OtherWithnesses { get; set; }
+        public virtual Persons OtherWithness { get; set; }
 
 
 
@@ -38,8 +39,6 @@ namespace AccidentSystem.Domain.Models
         {
 
             Causes = new Collection<Causes>();
-
-            Evidence = new Evidences();
 
             VehicleEntries = new Collection<VehicleEntries>();
 

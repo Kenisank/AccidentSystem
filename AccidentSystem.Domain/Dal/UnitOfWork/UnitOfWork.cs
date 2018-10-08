@@ -22,7 +22,10 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
             VehicleEntries = new VehicleEntryRepository(context);
 
             PedestrianEntries = new PedestrianEntryRepository(context);
+
+            Causes = new CauseRepository(context);
         }
+
 
 
         public IAccidentRecordRepository AccidentRecords { get; set; }
@@ -30,6 +33,8 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
         public IVehicleEntryRepository VehicleEntries { get; set; }
 
         public IPedestrianEntryRepository PedestrianEntries { get; set; }
+
+        public ICauseRepository Causes { get; set; }
 
         public void Dispose()
         {

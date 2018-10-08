@@ -93,7 +93,7 @@ namespace AccidentSystem.Domain.Migrations
                         PassagersCategory = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .ForeignKey("dbo.Categories", t => t.CategoryId)
                 .Index(t => t.CategoryId);
             
             CreateTable(

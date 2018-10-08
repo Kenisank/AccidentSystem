@@ -33,7 +33,35 @@ namespace AccidentSystem.Domain.Dal
 
 
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+
+            modelBuilder.Entity<Types>().HasRequired(t=>t.Category).WithMany(c=>c.Types).WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Categories>
+
+            //modelBuilder.Entity<Agent>().HasMany(t => t.Tenants).WithRequired(a => a.Agent).WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Tenant>().HasRequired(a => a.Agent).WithMany(t => t.Tenants).WillCascadeOnDelete(false);
+
+
+
+            //modelBuilder.Entity<Companies>().HasOptional(m => m.State).WithMany().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<States>().HasRequired(n => n.Country).WithMany(o => o.States).WillCascadeOnDelete(false);
+            //modelBuilder.Entity<LGAs>().HasRequired(a => a.State).WithMany(b => b.LGA).WillCascadeOnDelete(false);
+            //modelBuilder.Entity<EducationBackgrounds>().HasRequired(e => e.Country).WithMany().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Candidates>().HasRequired(e => e.State).WithMany().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Candidates>().HasRequired(e => e.Origin).WithMany().WillCascadeOnDelete(false);
+            // modelBuilder.Entity<Jobs>().HasRequired(f => f.JobType).WithMany().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Jobs>().HasRequired(f => f.JobLevel).WithMany().WillCascadeOnDelete(false);
+
+            // modelBuilder.Entity<Specializations>().HasRequired(d => d.Level).WithMany(q => q.Specializations).WillCascadeOnDelete(false);
+            base.OnModelCreating(modelBuilder);
+        }
+
+
+
         public static EfContext Create() { return new EfContext(); }
+
 
 
     }

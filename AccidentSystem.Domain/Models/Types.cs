@@ -16,7 +16,7 @@ namespace AccidentSystem.Domain.Models
 
         public int CategoryId { get; set; }
 
-        public virtual Categories Category { get; set; }
+        public Categories Category { get; set; }
 
         public int DriversCategory { get; set; }
 
