@@ -24,6 +24,12 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
             PedestrianEntries = new PedestrianEntryRepository(context);
 
             Causes = new CauseRepository(context);
+
+            Categories = new CategoryRepository(context);
+
+            States = new StateRepository(context);
+
+            Types = new TypeRepository(context);
         }
 
 
@@ -35,6 +41,12 @@ namespace AccidentSystem.Domain.Dal.UnitOfWork
         public IPedestrianEntryRepository PedestrianEntries { get; set; }
 
         public ICauseRepository Causes { get; set; }
+
+        public ICategoryRepository Categories { get; set; }
+
+        public IStateRepository States { get; set; }
+
+        public ITypeRepository Types { get; set; }
 
         public void Dispose()
         {

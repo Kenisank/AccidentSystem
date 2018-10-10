@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AccidentSystem.Core.Resources.AccidentEntry
 {
-    public class AccidentEntryResources
+    public class AccidentEntryFormResources
     {
 
         public string Address { get; set; }

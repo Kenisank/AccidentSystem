@@ -60,14 +60,20 @@
   <ItemGroup>
     <Compile Include="Dal\EfContext.cs" />
     <Compile Include="Dal\Repositories\AccidentRecordRepository.cs" />
+    <Compile Include="Dal\Repositories\CategoryRepository.cs" />
     <Compile Include="Dal\Repositories\CauseRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IAccidentRecordRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\ICategoryRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\ICauseRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\IStateRepository.cs" />
+    <Compile Include="Dal\Repositories\Interfaces\ITypeRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IVehicleEntryRepository.cs" />
     <Compile Include="Dal\Repositories\Interfaces\IPedestrianEntryRepository.cs" />
     <Compile Include="Dal\Repositories\PedestrianEntryRepository.cs" />
     <Compile Include="Dal\Repositories\Repository.cs" />
+    <Compile Include="Dal\Repositories\StateRepository.cs" />
+    <Compile Include="Dal\Repositories\TypeRepository.cs" />
     <Compile Include="Dal\Repositories\VehicleEntryRepository.cs" />
     <Compile Include="Dal\UnitOfWork\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Dal\UnitOfWork\UnitOfWork.cs" />
